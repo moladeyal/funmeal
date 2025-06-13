@@ -1,0 +1,83 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #d9534f;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+main {
+    padding: 1rem;
+    max-width: 600px;
+    margin: auto;
+}
+
+.search-container {
+    display: flex;
+    gap: 0.5rem;
+}
+
+#restaurant-input {
+    flex-grow: 1;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    direction: rtl; /* חשוב לשדה הקלט */
+}
+
+#search-button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    background-color: #5bc0de;
+    color: white;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#results-container {
+    margin-top: 2rem;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+#results-container h2 {
+    margin-top: 0;
+}
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.photo-gallery img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.hidden {
+    display: none;
+}
+
+#loader, #error-message {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+
+#error-message {
+    color: red;
+}

@@ -1,25 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
+
+<html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First GitHub Page</title>
-    <style>
-        body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            display: grid;
-            place-content: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f2f5;
-        }
-        h1 {
-            font-size: 4rem;
-            color: #1877f2;
-        }
-    </style>
+    <title>חיפוש מסעדות</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>שלום מעיין!</h1>
+
+    <header>
+        <h1>מצא לי מסעדה</h1>
+    </header>
+
+    <main>
+        <div class="search-container">
+            <input type="text" id="restaurant-input" placeholder="הקלד שם מסעדה...">
+            <button id="search-button">חפש</button>
+        </div>
+
+        <div id="results-container" class="hidden">
+            </div>
+         <div id="loader" class="hidden">טוען...</div>
+         <div id="error-message" class="hidden"></div>
+    </main>
+
+    <script src="app.js"></script>
 </body>
 </html>
