@@ -6,16 +6,25 @@ body {
 }
 
 header {
-    background-color: #d9534f;
+    background-color: #ffdd00;
     color: white;
     text-align: center;
-    padding: 1rem;
+    padding: 0.2rem;
+    cursor: pointer; /* הופך את סמן העכבר ליד קטנה */
+    transition: background-color 0.2s; /* אפקט נחמד למעבר עכבר */
 }
-
+header:hover {
+    background-color: #ffbb00; /* שינוי צבע במעבר עכבר */
+}
 main {
-    padding: 1rem;
+    padding: 0.6rem;
     max-width: 600px;
     margin: auto;
+}
+
+h1 {
+    margin-block-start: 0.3em;
+    margin-block-end: 0.3em;
 }
 
 .search-container {
@@ -43,9 +52,8 @@ main {
 }
 
 #results-container {
-    margin-top: 2rem;
     background: white;
-    padding: 1.5rem;
+    padding: 0.8rem;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
@@ -80,4 +88,112 @@ main {
 
 #error-message {
     color: red;
+}
+
+/* קונטיינר שמאחד את סוג המסעדה, מחיר ודירוג */
+.details-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* מאפשר גלישה למטה במסכים צרים מאוד */
+    gap: 0.5rem;
+    color: #666;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.details-text {
+    font-weight: 500;
+}
+
+.rating-text {
+    flex-shrink: 0; /* מונע מהדירוג להתכווץ */
+}
+
+/* עיצוב לכתובת עם אייקון */
+p .icon {
+    margin-right: 0.5rem;
+}
+
+/* הדגשת הכותרות של הסקשנים */
+#results-container h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #333;
+    border-bottom: 2px solid #d9534f;
+    padding-bottom: 0.25rem;
+    display: inline-block;
+}
+
+/* עיצוב לטקסט המנות המומלצות */
+.highlights-text {
+    line-height: 1.6;
+    font-style: italic;
+    color: #555;
+    background-color: #f9f9f9;
+    border-left: 4px solid #5bc0de;
+    padding: 0.75rem 1rem;
+    margin: 0;
+}
+
+/* הסרת שוליים מהאלמנטים החדשים */
+.details-text, .rating-text {
+    margin: 0;
+}
+
+.name-and-link-wrapper {
+    display: flex;
+    justify-content: space-between; /* דוחף את האלמנטים לקצוות */
+    align-items: baseline;        /* מיישר את קו הבסיס של הטקסט, נראה הכי טוב */
+    gap: 1rem;                    /* רווח מינימלי ביניהם */
+    margin-bottom: 0.5rem;        /* רווח קטן מתחת לשורה זו */
+}
+
+/* עיצוב מחדש של שם המסעדה כדי שלא יתפוס את כל הרוחב */
+.name-and-link-wrapper h2 {
+    margin: 0; /* איפוס שוליים */
+}
+
+/* עיצוב חדש ועדין ללינק האתר */
+.website-link-inline {
+    text-decoration: none;
+    color: #337ab7;
+    font-weight: bold;
+    font-size: 1rem;
+    white-space: nowrap; /* מונע שבירת שורה במילה "אתר" */
+    transition: color 0.2s;
+    flex-shrink: 0; /* מונע מהלינק להתכווץ אם שם המסעדה ארוך */
+}
+
+.website-link-inline:hover {
+    color: #23527c;
+    text-decoration: underline;
+}
+
+.website-link-inline .link-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 2px;
+}
+
+#results-container {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    overflow: hidden; /* חשוב כדי שהתמונה תתאים לפינות המעוגלות */
+}
+
+/* סגנון לתמונת ה-Thumbnail הראשית */
+.main-photo-thumbnail {
+    width: 100%;
+    height: auto;
+    max-height: 220px; /* אפשר לשחק עם הגובה הזה */
+    object-fit: cover; /* מבטיח שהתמונה תמלא את השטח בלי להתעוות */
+    display: block; /* מונע רווחים מיותרים מתחת לתמונה */
+}
+
+/* קונטיינר חדש לתוכן הטקסטואלי, לו ניתן את הריווח הפנימי */
+.details-wrapper {
+    padding: 0.5rem;
 }
